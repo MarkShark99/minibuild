@@ -1,3 +1,7 @@
+# Bazel
+bazel-*
+MODULE.bazel.lock
+.bazelrc
 # Compiled class file
 *.class
 

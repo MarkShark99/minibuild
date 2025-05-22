@@ -1,0 +1,12 @@
+name: "minibuild-test"
+version: "0.1.0"
+
+external_dependency: {
+  name: "raylib"
+  url: "https://github.com/raysan5/raylib/archive/refs/tags/5.5.zip"
+}
+
+external_dependency: {
+  name: "miniaudio"
+  url: "https://github.com/mackron/miniaudio/archive/refs/tags/0.11.22.zip"
+}

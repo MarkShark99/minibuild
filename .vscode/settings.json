@@ -1,0 +1,24 @@
+{
+  "java.project.referencedLibraries": [
+    "bazel-bin/src/proto/*.jar",
+    "bazel-bin/external/**/*.jar",
+  ],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true,
+    ".eclipse": false,
+    "src": false,
+    "bazel-bin": false,
+    "bazel-out": false,
+    "bazel-testlogs": false,
+    "bazel-minibuild": false
+  },
+  "cmake.ignoreCMakeListsMissing": true
+}

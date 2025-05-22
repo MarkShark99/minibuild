@@ -1,0 +1,9 @@
+CCBinary {
+  name: "test-main"
+  srcs: [
+    "test-main.cpp"
+  ]
+  deps: [
+    
+  ]
+}

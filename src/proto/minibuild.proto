@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option java_package = "dev.markdw.minibuild.proto";
+
+message ProjectConfig {
+  string name = 1;
+  string version = 2;
+  repeated ExternalDependency external_dependency = 3;
+}
+
+message BuildFile {
+  repeated CCBinary binary = 1;
+  repeated CCLibrary library = 2;
+}
+
+message CCBinary {
+  string name = 1;
+  repeated string source = 2;
+  repeated string dep = 3;
+}
+
+message CCLibrary {
+  string name = 1;
+  repeated string source = 2;
+  repeated string dep = 3;
+}
+
+message ExternalDependency {
+  string name = 1;
+  string url = 2;
+  string strip_prefix = 3;
+}
