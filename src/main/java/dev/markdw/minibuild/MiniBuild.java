@@ -3,16 +3,13 @@ package dev.markdw.minibuild;
 import com.google.common.flogger.FluentLogger;
 import com.google.protobuf.TextFormat;
 import com.google.protobuf.TextFormat.ParseException;
-import dev.markdw.minibuild.graph.DependencyGraph;
-import dev.markdw.minibuild.proto.Minibuild.ExternalDependency;
 import dev.markdw.minibuild.proto.Minibuild.ProjectConfig;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.inject.Singleton;
 
 public class MiniBuild {
   private static final FluentLogger logger = FluentLogger.forEnclosingClass();
