@@ -1,15 +1,16 @@
 package dev.markdw.minibuild;
 
-import com.google.common.flogger.FluentLogger;
-import com.google.protobuf.TextFormat;
-import com.google.protobuf.TextFormat.ParseException;
-import dev.markdw.minibuild.proto.Minibuild.ProjectConfig;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import javax.inject.Singleton;
+import com.google.common.flogger.FluentLogger;
+import com.google.protobuf.TextFormat;
+import com.google.protobuf.TextFormat.ParseException;
+import dagger.assisted.Assisted;
+import dagger.assisted.AssistedInject;
+import dev.markdw.minibuild.proto.Minibuild.ProjectConfig;
 
 public class MiniBuild {
   private static final FluentLogger logger = FluentLogger.forEnclosingClass();
@@ -17,7 +18,14 @@ public class MiniBuild {
   private static final String CWD_PROPERTY = "user.dir";
   private static final String CONFIG_FILENAME = "config.txtpb";
 
-  public static void main(String[] args) {
+  private String cwd;
+
+  @AssistedInject
+  public MiniBuild(@Assisted String cwd) {
+    this.cwd = cwd;
+  }
+
+  public void run(String[] args) {
     if (args.length < 1) {
       logger.atSevere().log("Missing arguments");
       return;

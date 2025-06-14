@@ -8,14 +8,23 @@ package(default_visibility = ["//visibility:public"])
 
 java_binary(
     name = "minibuild",
-    srcs = ["MiniBuild.java"],
+    srcs = [
+        "MiniBuild.java",
+        "MiniBuildFactory.java",
+        "MiniBuildLauncher.java",
+    ],
     main_class = "dev.markdw.minibuild.MiniBuild",
+    plugins = [
+        ":dagger-compiler",
+    ],
     deps = [
         "//src/main/java/dev/markdw/minibuild/graph:dependency_graph",
         "//src/proto:minibuild_java_proto",
-        "@maven//:com_google_dagger_dagger",
+        ":dagger",
+        # "@maven//:com_google_dagger_dagger",
         "@maven//:com_google_flogger_flogger",
         "@maven//:com_google_flogger_flogger_system_backend",
+        "@maven//:javax_inject_javax_inject",
         "@protobuf//java/core",
     ],
 )
