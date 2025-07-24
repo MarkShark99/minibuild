@@ -3,6 +3,9 @@
     "bazel-bin/src/proto/*.jar",
     "bazel-bin/external/**/*.jar",
   ],
+  "java.project.sourcePaths": [
+    "bazel-bin/src/**"
+  ],
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
